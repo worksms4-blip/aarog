@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>AAROG Homeopathy Clinic | Luxury Natural Healing | Homeopathy Wellness</title>
+  <!-- TailwindCSS v3 + Inter Font -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* CUSTOM PREMIUM DESIGN SYSTEM - Deep Matte Dark Green + Gold | Homeopathy Luxury */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background-color: #08130B;
+      color: #F5F2EB;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    /* luxury gradient background — elegant, minimal */
+    .luxury-bg {
+      background: radial-gradient(ellipse at 30% 40%, rgba(20, 45, 30, 0.65) 0%, #08130B 92%);
+    }
+    
+    /* premium card - matte dark green, subtle border, smooth lift */
+    .premium-card {
+      background: rgba(18, 35, 25, 0.7);
+      backdrop-filter: blur(0px);
+      border: 1px solid rgba(212, 175, 55, 0.18);
+      border-radius: 32px;
+      transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.3);
+    }
+    
+    .premium-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212, 175, 55, 0.55);
+      box-shadow: 0 24px 36px -16px rgba(0, 0, 0, 0.5);
+      background: rgba(22, 42, 30, 0.88);
+    }
+    
+    /* gold button luxury */
+    .btn-gold {
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid #D4AF37;
+      color: #E9DFC7;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(2px);
+      letter-spacing: 0.02em;
+    }
+    
+    .btn-gold:hover {
+      background: #D4AF37;
+      color: #08130B;
+      border-color: #D4AF37;
+      transform: scale(1.02);
+      box-shadow: 0 12px 24px -12px rgba(212, 175, 55, 0.3);
+    }
+    
+    /* WhatsApp floating btn elegant */
+    .whatsapp-float {
+      background: #1e2a24;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    .whatsapp-float:hover {
+      transform: scale(1.05);
+      background: #2c3a2e;
+      border-color: #D4AF37;
+    }
+    
+    /* premium popup */
+    .popup-overlay {
+      background: rgba(5, 10, 7, 0.85);
+      backdrop-filter: blur(4px);
+      transition: opacity 0.2s ease;
+    }
+    
+    .popup-card {
+      background: #0f1e16;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      border-radius: 36px;
+      box-shadow: 0 30px 40px -20px black;
+      max-width: 420px;
+      width: 90%;
+      transition: transform 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+    
+    /* premium scroll */
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0c1a12;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #D4AF37;
+      border-radius: 10px;
+    }
+    
+    /* fade-up animation */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1), transform 0.7s cubic-bezier(0.2, 0.9, 0.4, 1);
+    }
+    
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* clickable sections – premium interactivity */
+    .clickable-section {
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .clickable-section:hover {
+      transform: translateY(-3px);
+      border-color: rgba(212, 175, 55, 0.5) !important;
+      box-shadow: 0 18px 28px -12px rgba(0, 0, 0, 0.4);
+    }
+    
+    .clickable-card {
+      transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+    
+    .clickable-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212, 175, 55, 0.65) !important;
+      box-shadow: 0 28px 38px -16px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* hero subtle click hint */
+    .hero-clickable {
+      cursor: pointer;
+    }
+    
+    .gold-accent {
+      color: #D4AF37;
+    }
+    
+    /* additional premium adjustment */
+    .trust-item {
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+    .trust-item:hover {
+      transform: translateX(6px);
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+  <!-- MAIN WEBSITE - Ultra Premium Homeopathy Experience -->
+  <main class="relative overflow-hidden">
+    
+    <!-- HERO SECTION - fully clickable (entire hero block redirects) -->
+    <section class="hero-clickable relative min-h-screen flex items-center justify-center px-6 md:px-12 luxury-bg overflow-hidden" data-map-link="true">
+      <!-- subtle ambient glows -->
+      <div class="absolute top-1/3 left-1/4 w-80 h-80 rounded-full bg-[#D4AF37] opacity-[0.03] pointer-events-none"></div>
+      <div class="absolute bottom-10 right-10 w-64 h-64 rounded-full bg-[#D4AF37] opacity-[0.02] pointer-events-none"></div>
+      
+      <div class="max-w-5xl mx-auto text-center z-10 pointer-events-none">
+        <div class="fade-up visible" style="transition-delay: 0.1s;">
+          <h1 class="text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight leading-[1.1] md:leading-[1.15] text-white">
+            Heal Naturally.<br>
+            <span class="gold-accent">Live Beautifully.</span>
+          </h1>
+        </div>
+        
+        <div class="fade-up visible mt-8 md:mt-10" style="transition-delay: 0.25s;">
+          <p class="text-lg md:text-xl text-[#E2DCCD] max-w-2xl mx-auto font-light leading-relaxed">
+            Constitutional homeopathy · Root-cause healing · Gentle & long-term wellness
+          </p>
+        </div>
+        
+        <div class="fade-up visible mt-12 md:mt-14" style="transition-delay: 0.4s;">
+          <!-- PRIMARY BUTTON (still functional and clickable separately) -->
+          <a href="#" id="bookConsultBtn" class="btn-gold inline-flex items-center justify-center px-10 py-4 text-base md:text-lg font-medium rounded-full transition-all duration-300 shadow-xl pointer-events-auto">
+            Book Your Consultation
+          </a>
+        </div>
+      </div>
+      
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 opacity-40 pointer-events-none">
+        <div class="w-[1px] h-12 bg-gradient-to-b from-[#D4AF37]/50 to-transparent"></div>
+      </div>
+    </section>
+    
+    <!-- ABOUT SECTION with premium homeopathy language - clickable block wrapper -->
+    <div class="clickable-section" data-map-link="true">
+      <section class="py-28 md:py-36 px-6 md:px-12 bg-[#08130B]">
+        <div class="max-w-7xl mx-auto">
+          <div class="fade-up text-center mb-16 md:mb-20">
+            <span class="text-xs uppercase tracking-[0.2em] text-[#D4AF37] font-semibold">Homeopathy Essence</span>
+            <h2 class="text-4xl md:text-5xl font-medium mt-3 tracking-tight text-white">About Aarog</h2>
+            <div class="w-16 h-[1px] bg-[#D4AF37]/40 mx-auto mt-6"></div>
+          </div>
+          
+          <div class="fade-up text-center max-w-3xl mx-auto mb-20">
+            <p class="text-lg md:text-xl text-[#E5DFD0] font-light leading-relaxed">
+              AAROG Homeopathy Clinic delivers individualized constitutional care, addressing the root cause of illness. 
+              Our gentle, natural remedies stimulate the body’s innate healing intelligence — restoring balance, immunity, 
+              and lasting vitality without side effects.
+            </p>
+          </div>
+          
+          <!-- 3 PREMIUM FEATURE CARDS - homeopathy focused & clickable -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+            <div class="premium-card p-8 md:p-9 fade-up text-center clickable-card" data-map-link="true">
+              <div class="w-12 h-12 rounded-full border border-[#D4AF37]/40 flex items-center justify-center mx-auto mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v8H4v-8M12 2v8M8 6l4-4 4 4"/><path d="M12 2v8"/><path d="M4 10h16v2H4z"/></svg>
+              </div>
+              <h3 class="text-2xl font-semibold text-white mb-3">Constitutional Prescribing</h3>
+              <p class="text-[#CBC3B1] leading-relaxed">Deeply individualized homeopathic treatment matched to your unique physical, emotional, and genetic makeup.</p>
+            </div>
+            <div class="premium-card p-8 md:p-9 fade-up text-center clickable-card" data-map-link="true" style="transition-delay: 0.1s;">
+              <div class="w-12 h-12 rounded-full border border-[#D4AF37]/40 flex items-center justify-center mx-auto mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+              </div>
+              <h3 class="text-2xl font-semibold text-white mb-3">Gentle & Side-Effect Free</h3>
+              <p class="text-[#CBC3B1] leading-relaxed">Ultra-dilute natural remedies that support deep immunity, ideal for all ages — infants to elders.</p>
+            </div>
+            <div class="premium-card p-8 md:p-9 fade-up text-center clickable-card" data-map-link="true" style="transition-delay: 0.2s;">
+              <div class="w-12 h-12 rounded-full border border-[#D4AF37]/40 flex items-center justify-center mx-auto mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9-4-18-3 9H2"/></svg>
+              </div>
+              <h3 class="text-2xl font-semibold text-white mb-3">Holistic Vital Force Harmony</h3>
+              <p class="text-[#CBC3B1] leading-relaxed">Restoring mind-body balance and strengthening innate resilience for sustainable wellness.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    
+    <!-- TRUST SECTION - homeopathy-rooted trust points, clickable -->
+    <div class="clickable-section" data-map-link="true">
+      <section class="py-28 md:py-36 px-6 md:px-12 bg-[#0A1610] relative">
+        <div class="max-w-7xl mx-auto">
+          <div class="fade-up text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-medium tracking-tight text-white">Why Patients Trust <span class="gold-accent">Aarog</span></h2>
+            <div class="w-20 h-[1px] bg-[#D4AF37]/50 mx-auto mt-6"></div>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14 max-w-5xl mx-auto">
+            <div class="flex items-start gap-5 fade-up trust-item" data-map-link="true">
+              <div class="shrink-0 mt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-white">Root-Cause Focused Healing</h3>
+                <p class="text-[#D4CDB5] mt-1 leading-relaxed">We treat the underlying terrain — not just symptoms — unlocking deep, lasting recovery.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-5 fade-up trust-item" data-map-link="true" style="transition-delay: 0.05s;">
+              <div class="shrink-0 mt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-white">Personalized Constitutional Plans</h3>
+                <p class="text-[#D4CDB5] mt-1 leading-relaxed">Remedies selected for your unique vital force, lifestyle, and emotional state.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-5 fade-up trust-item" data-map-link="true" style="transition-delay: 0.1s;">
+              <div class="shrink-0 mt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><path d="M12 8v8M8 12h8M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/></svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-white">Immune & Vitality Support</h3>
+                <p class="text-[#D4CDB5] mt-1 leading-relaxed">Natural immunomodulation using classical homeopathy to strengthen host defense.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-5 fade-up trust-item" data-map-link="true" style="transition-delay: 0.15s;">
+              <div class="shrink-0 mt-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/><path d="M3 15h18M3 9h18"/></svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-white">Calm Healing Sanctuary</h3>
+                <p class="text-[#D4CDB5] mt-1 leading-relaxed">Premium consultation space where every visit deepens your journey to balance.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    
+    <!-- FOOTER - clickable minimal luxury branding -->
+    <footer class="clickable-section py-12 border-t border-[#D4AF37]/20 bg-[#08130B]" data-map-link="true">
+      <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-5">
+        <div>
+          <h3 class="text-2xl font-light tracking-wide text-white">AAROG <span class="gold-accent font-medium">Homeopathy Clinic</span></h3>
+          <p class="text-[#BDB6A5] text-sm mt-1">Constitutional homeopathy · deep wellness</p>
+        </div>
+        <div class="text-right">
+          <p class="text-[#D4AF37] font-mono tracking-wide">+91 90742 84264</p>
+          <p class="text-[#9B937E] text-xs mt-2">© 2025 Aarog Clinic — luxury homeopathy heritage</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+  
+  <!-- WHATSAPP FLOATING BUTTON (fixed) ELEGANT -->
+  <div id="whatsappFloatBtn" class="whatsapp-float fixed bottom-8 right-6 md:bottom-10 md:right-10 z-50 w-14 h-14 rounded-full flex items-center justify-center cursor-pointer shadow-2xl transition-all">
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  </div>
+  
+  <!-- PREMIUM WHATSAPP POPUP (luxury text refined for homeopathy) -->
+  <div id="whatsappPopup" class="popup-overlay fixed inset-0 z-[100] flex items-center justify-center opacity-0 invisible transition-all duration-200">
+    <div class="popup-card p-6 md:p-8 relative">
+      <div class="flex justify-between items-center border-b border-[#D4AF37]/30 pb-4 mb-5">
+        <div>
+          <h3 class="text-xl font-semibold text-white">Aarog Homeopathy</h3>
+          <div class="flex items-center gap-2 mt-1">
+            <span class="w-2 h-2 bg-green-500 rounded-full inline-block"></span>
+            <span class="text-xs text-[#B7AE92]">Online · personal remedy guidance</span>
+          </div>
+        </div>
+        <button id="closePopupBtn" class="text-[#D4AF37]/70 hover:text-[#D4AF37] transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      
+      <div class="mb-6">
+        <label class="block text-[#D9D2C2] text-sm mb-2 font-light">Share your health concern</label>
+        <textarea id="popupMsgInput" rows="3" class="w-full bg-[#111F17] border border-[#D4AF37]/30 rounded-2xl px-4 py-3 text-white focus:outline-none focus:border-[#D4AF37] transition resize-none" placeholder="Hello, I'd like to explore constitutional homeopathy for..."></textarea>
+      </div>
+      
+      <button id="sendWhatsappBtn" class="w-full btn-gold py-3 rounded-full text-base font-medium transition-all flex items-center justify-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        Send Message
+      </button>
+      <p class="text-[10px] text-center text-[#9B937E] mt-4">We’ll respond with gentle guidance</p>
+    </div>
+  </div>
+  
+  <script>
+    (function() {
+      // -------------------------------
+      // 1. INTERSECTION OBSERVER (fade-up, preserve light weight)
+      const fadeElements = document.querySelectorAll('.fade-up');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: "0px 0px -30px 0px" });
+      fadeElements.forEach(el => observer.observe(el));
+      
+      // ensure hero already visible
+      document.querySelectorAll('.fade-up').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 60) el.classList.add('visible');
+      });
+      
+      // -------------------------------
+      // 2. MAP REDIRECT LOGIC (all clickable sections that have data-map-link="true")
+      const MAP_URL = "https://maps.app.goo.gl/HpiypEgPH7C7JNABA";
+      
+      function redirectToMap(e) {
+        // prevent default if inside anchor/button but not interfering
+        if (e.target.closest('#bookConsultBtn')) return; // primary button uses separate map but same destination (fine)
+        if (e.target.closest('#whatsappFloatBtn')) return;
+        if (e.target.closest('#whatsappPopup')) return;
+        window.open(MAP_URL, '_blank', 'noopener,noreferrer');
+      }
+      
+      // select all clickable containers: hero, about wrapper, trust wrapper, footer, each feature card and trust items individually for elegant granularity but without double events
+      const clickableSections = document.querySelectorAll('[data-map-link="true"]');
+      clickableSections.forEach(el => {
+        el.addEventListener('click', (e) => {
+          // avoid double firing when inner clickables also bubble
+          e.stopPropagation();
+          redirectToMap(e);
+        });
+      });
+      
+      // also ensure any direct premium cards that are .clickable-card inside about works perfectly (already data attribute)
+      // Book consultation button: open map in new tab using same link (premium)
+      const bookBtn = document.getElementById('bookConsultBtn');
+      if (bookBtn) {
+        bookBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          window.open(MAP_URL, '_blank', 'noopener,noreferrer');
+        });
+      }
+      
+      // -------------------------------
+      // 3. WHATSAPP POPUP LOGIC (preserve original behavior + refined text)
+      const floatBtn = document.getElementById('whatsappFloatBtn');
+      const popup = document.getElementById('whatsappPopup');
+      const closePopupBtn = document.getElementById('closePopupBtn');
+      const sendBtn = document.getElementById('sendWhatsappBtn');
+      const msgInput = document.getElementById('popupMsgInput');
+      const PHONE = "919074284264";
+      
+      function openWhatsAppWithMessage(message) {
+        const encodedMsg = encodeURIComponent(message.trim());
+        const waUrl = `https://wa.me/${PHONE}?text=${encodedMsg}`;
+        window.open(waUrl, '_blank', 'noopener,noreferrer');
+      }
+      
+      if (floatBtn) {
+        floatBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          popup.classList.remove('invisible', 'opacity-0');
+          popup.classList.add('opacity-100', 'visible');
+          setTimeout(() => msgInput.focus(), 60);
+        });
+      }
+      
+      function closePopupModal() {
+        popup.classList.add('invisible', 'opacity-0');
+        popup.classList.remove('opacity-100', 'visible');
+      }
+      
+      if (closePopupBtn) closePopupBtn.addEventListener('click', closePopupModal);
+      popup.addEventListener('click', (e) => {
+        if (e.target === popup) closePopupModal();
+      });
+      
+      if (sendBtn) {
+        sendBtn.addEventListener('click', () => {
+          let message = msgInput.value.trim();
+          if (message === "") {
+            message = "I'm interested in constitutional homeopathy at Aarog Clinic. Please share consultation details.";
+            msgInput.value = message;
+          }
+          openWhatsAppWithMessage(message);
+          closePopupModal();
+          msgInput.value = "";
+        });
+      }
+      
+      if (msgInput) {
+        msgInput.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+            e.preventDefault();
+            sendBtn.click();
+          }
+        });
+      }
+      
+      // tiny performance: prevent body scroll on popup open
+      popup.addEventListener('touchmove', (e) => {
+        if (e.target === popup) e.preventDefault();
+      }, { passive: false });
+      
+      // Add subtle cursor pointer to all clickable sections to enhance affordance without flashy
+      document.querySelectorAll('[data-map-link="true"], .clickable-card, .trust-item').forEach(el => {
+        el.style.cursor = 'pointer';
+      });
+      document.querySelector('.hero-clickable').style.cursor = 'pointer';
+      
+      // avoid double map opening if nested trigger, but we already stopPropagation inside click handler
+      // additional elegantly: ensure footer link nice
+    })();
+  </script>
+</body>
+</html>
