@@ -9,6 +9,7 @@
   <style>
     /* CUSTOM PREMIUM DESIGN SYSTEM - Deep Matte Dark Green + Gold | Homeopathy Luxury */
     @import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
     
     * {
       margin: 0;
@@ -107,7 +108,7 @@
       border-radius: 10px;
     }
     
-    /* fade-up animation */
+    /* fade-up animation for existing elements */
     .fade-up {
       opacity: 0;
       transform: translateY(28px);
@@ -119,7 +120,7 @@
       transform: translateY(0);
     }
     
-    /* clickable sections – premium interactivity */
+    /* clickable sections – premium interactivity (unchanged) */
     .clickable-section {
       cursor: pointer;
       transition: all 0.3s ease;
@@ -141,7 +142,6 @@
       box-shadow: 0 28px 38px -16px rgba(0, 0, 0, 0.5);
     }
     
-    /* hero subtle click hint */
     .hero-clickable {
       cursor: pointer;
     }
@@ -150,7 +150,6 @@
       color: #D4AF37;
     }
     
-    /* additional premium adjustment */
     .trust-item {
       transition: all 0.25s ease;
       cursor: pointer;
@@ -158,16 +157,137 @@
     .trust-item:hover {
       transform: translateX(6px);
     }
+    
+    /* ========== PREMIUM BRAND IDENTITY - TOP LEFT ========== */
+    /* Luxury wellness branding element - fixed position, elegant, cinematic entrance */
+    .brand-container {
+      position: fixed;
+      top: 2rem;
+      left: 2rem;
+      z-index: 1000;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      opacity: 0;
+      transform: translateY(-12px) translateZ(0);
+      filter: blur(4px);
+      animation: premiumBrandReveal 1.2s cubic-bezier(0.2, 0.85, 0.3, 1) forwards;
+      animation-delay: 0.1s;
+    }
+    
+    @keyframes premiumBrandReveal {
+      0% {
+        opacity: 0;
+        transform: translateY(-16px) translateZ(0);
+        filter: blur(6px);
+      }
+      40% {
+        opacity: 0.6;
+        transform: translateY(-4px) translateZ(0);
+        filter: blur(2px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) translateZ(0);
+        filter: blur(0);
+      }
+    }
+    
+    /* subtle hover glow - elegant */
+    .brand-container:hover {
+      transform: scale(1.02) translateY(-1px);
+      filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.2));
+    }
+    
+    .brand-container:hover .brand-glow {
+      opacity: 0.5;
+    }
+    
+    .brand-text-main {
+      font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+      font-weight: 400;
+      font-size: 1.85rem;
+      letter-spacing: 0.08em;
+      color: #F2EBDD;
+      line-height: 1.2;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, #F9F3E2 0%, #E2D8C2 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+    
+    .brand-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #D4AF37;
+      margin-top: 0.25rem;
+      font-weight: 300;
+      opacity: 0.75;
+      transition: opacity 0.2s ease;
+    }
+    
+    .brand-container:hover .brand-sub {
+      opacity: 1;
+    }
+    
+    /* responsive adjustments: tablet/mobile */
+    @media (max-width: 768px) {
+      .brand-container {
+        top: 1.25rem;
+        left: 1.25rem;
+      }
+      .brand-text-main {
+        font-size: 1.4rem;
+        letter-spacing: 0.06em;
+      }
+      .brand-sub {
+        font-size: 0.55rem;
+        letter-spacing: 0.14em;
+      }
+    }
+    
+    /* ensure no conflict with existing content spacing */
+    body {
+      position: relative;
+    }
+    
+    /* minor refinement - brand glow under effect */
+    .brand-glow {
+      position: absolute;
+      top: -4px;
+      left: -8px;
+      right: -8px;
+      bottom: -4px;
+      background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, rgba(212,175,55,0) 80%);
+      border-radius: 40px;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+      pointer-events: none;
+      z-index: -1;
+    }
+    
+    .brand-container {
+      position: fixed;
+    }
   </style>
 </head>
 <body class="antialiased">
 
-  <!-- MAIN WEBSITE - Ultra Premium Homeopathy Experience -->
+  <!-- PREMIUM LUXURY BRAND IDENTITY - AAROG top left with cinematic entrance -->
+  <div class="brand-container" id="aarogBrand">
+    <div class="brand-glow"></div>
+    <div class="brand-text-main">AAROG</div>
+    <div class="brand-sub">Natural Homeopathy</div>
+  </div>
+
+  <!-- MAIN WEBSITE - Ultra Premium Homeopathy Experience (EXISTING DESIGN UNCHANGED) -->
   <main class="relative overflow-hidden">
     
-    <!-- HERO SECTION - fully clickable (entire hero block redirects) -->
+    <!-- HERO SECTION - fully clickable -->
     <section class="hero-clickable relative min-h-screen flex items-center justify-center px-6 md:px-12 luxury-bg overflow-hidden" data-map-link="true">
-      <!-- subtle ambient glows -->
       <div class="absolute top-1/3 left-1/4 w-80 h-80 rounded-full bg-[#D4AF37] opacity-[0.03] pointer-events-none"></div>
       <div class="absolute bottom-10 right-10 w-64 h-64 rounded-full bg-[#D4AF37] opacity-[0.02] pointer-events-none"></div>
       
@@ -186,7 +306,6 @@
         </div>
         
         <div class="fade-up visible mt-12 md:mt-14" style="transition-delay: 0.4s;">
-          <!-- PRIMARY BUTTON (still functional and clickable separately) -->
           <a href="#" id="bookConsultBtn" class="btn-gold inline-flex items-center justify-center px-10 py-4 text-base md:text-lg font-medium rounded-full transition-all duration-300 shadow-xl pointer-events-auto">
             Book Your Consultation
           </a>
@@ -198,7 +317,7 @@
       </div>
     </section>
     
-    <!-- ABOUT SECTION with premium homeopathy language - clickable block wrapper -->
+    <!-- ABOUT SECTION -->
     <div class="clickable-section" data-map-link="true">
       <section class="py-28 md:py-36 px-6 md:px-12 bg-[#08130B]">
         <div class="max-w-7xl mx-auto">
@@ -216,7 +335,6 @@
             </p>
           </div>
           
-          <!-- 3 PREMIUM FEATURE CARDS - homeopathy focused & clickable -->
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
             <div class="premium-card p-8 md:p-9 fade-up text-center clickable-card" data-map-link="true">
               <div class="w-12 h-12 rounded-full border border-[#D4AF37]/40 flex items-center justify-center mx-auto mb-6">
@@ -244,7 +362,7 @@
       </section>
     </div>
     
-    <!-- TRUST SECTION - homeopathy-rooted trust points, clickable -->
+    <!-- TRUST SECTION -->
     <div class="clickable-section" data-map-link="true">
       <section class="py-28 md:py-36 px-6 md:px-12 bg-[#0A1610] relative">
         <div class="max-w-7xl mx-auto">
@@ -295,7 +413,7 @@
       </section>
     </div>
     
-    <!-- FOOTER - clickable minimal luxury branding -->
+    <!-- FOOTER -->
     <footer class="clickable-section py-12 border-t border-[#D4AF37]/20 bg-[#08130B]" data-map-link="true">
       <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-5">
         <div>
@@ -310,12 +428,12 @@
     </footer>
   </main>
   
-  <!-- WHATSAPP FLOATING BUTTON (fixed) ELEGANT -->
+  <!-- WHATSAPP FLOATING BUTTON -->
   <div id="whatsappFloatBtn" class="whatsapp-float fixed bottom-8 right-6 md:bottom-10 md:right-10 z-50 w-14 h-14 rounded-full flex items-center justify-center cursor-pointer shadow-2xl transition-all">
     <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
   </div>
   
-  <!-- PREMIUM WHATSAPP POPUP (luxury text refined for homeopathy) -->
+  <!-- WHATSAPP POPUP -->
   <div id="whatsappPopup" class="popup-overlay fixed inset-0 z-[100] flex items-center justify-center opacity-0 invisible transition-all duration-200">
     <div class="popup-card p-6 md:p-8 relative">
       <div class="flex justify-between items-center border-b border-[#D4AF37]/30 pb-4 mb-5">
@@ -346,8 +464,7 @@
   
   <script>
     (function() {
-      // -------------------------------
-      // 1. INTERSECTION OBSERVER (fade-up, preserve light weight)
+      // Intersection Observer for existing fade-up elements
       const fadeElements = document.querySelectorAll('.fade-up');
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -359,36 +476,30 @@
       }, { threshold: 0.1, rootMargin: "0px 0px -30px 0px" });
       fadeElements.forEach(el => observer.observe(el));
       
-      // ensure hero already visible
       document.querySelectorAll('.fade-up').forEach(el => {
         const rect = el.getBoundingClientRect();
         if (rect.top < window.innerHeight - 60) el.classList.add('visible');
       });
       
-      // -------------------------------
-      // 2. MAP REDIRECT LOGIC (all clickable sections that have data-map-link="true")
+      // MAP REDIRECT LOGIC (global)
       const MAP_URL = "https://maps.app.goo.gl/HpiypEgPH7C7JNABA";
       
       function redirectToMap(e) {
-        // prevent default if inside anchor/button but not interfering
-        if (e.target.closest('#bookConsultBtn')) return; // primary button uses separate map but same destination (fine)
+        if (e.target.closest('#bookConsultBtn')) return;
         if (e.target.closest('#whatsappFloatBtn')) return;
         if (e.target.closest('#whatsappPopup')) return;
         window.open(MAP_URL, '_blank', 'noopener,noreferrer');
       }
       
-      // select all clickable containers: hero, about wrapper, trust wrapper, footer, each feature card and trust items individually for elegant granularity but without double events
       const clickableSections = document.querySelectorAll('[data-map-link="true"]');
       clickableSections.forEach(el => {
         el.addEventListener('click', (e) => {
-          // avoid double firing when inner clickables also bubble
           e.stopPropagation();
           redirectToMap(e);
         });
       });
       
-      // also ensure any direct premium cards that are .clickable-card inside about works perfectly (already data attribute)
-      // Book consultation button: open map in new tab using same link (premium)
+      // Book consultation button
       const bookBtn = document.getElementById('bookConsultBtn');
       if (bookBtn) {
         bookBtn.addEventListener('click', (e) => {
@@ -398,8 +509,16 @@
         });
       }
       
-      // -------------------------------
-      // 3. WHATSAPP POPUP LOGIC (preserve original behavior + refined text)
+      // BRAND CLICK: redirect to maps (premium interaction)
+      const brandElement = document.getElementById('aarogBrand');
+      if (brandElement) {
+        brandElement.addEventListener('click', (e) => {
+          e.stopPropagation();
+          window.open(MAP_URL, '_blank', 'noopener,noreferrer');
+        });
+      }
+      
+      // WHATSAPP POPUP LOGIC (unchanged)
       const floatBtn = document.getElementById('whatsappFloatBtn');
       const popup = document.getElementById('whatsappPopup');
       const closePopupBtn = document.getElementById('closePopupBtn');
@@ -454,19 +573,14 @@
         });
       }
       
-      // tiny performance: prevent body scroll on popup open
       popup.addEventListener('touchmove', (e) => {
         if (e.target === popup) e.preventDefault();
       }, { passive: false });
       
-      // Add subtle cursor pointer to all clickable sections to enhance affordance without flashy
       document.querySelectorAll('[data-map-link="true"], .clickable-card, .trust-item').forEach(el => {
         el.style.cursor = 'pointer';
       });
-      document.querySelector('.hero-clickable').style.cursor = 'pointer';
-      
-      // avoid double map opening if nested trigger, but we already stopPropagation inside click handler
-      // additional elegantly: ensure footer link nice
+      if (document.querySelector('.hero-clickable')) document.querySelector('.hero-clickable').style.cursor = 'pointer';
     })();
   </script>
 </body>
